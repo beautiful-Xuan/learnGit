@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<!--声明后设body高度没用。因为流式布局以节省空间为主-->
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <!--设置IE浏览器的兼容性，以最新的版本兼容当前的-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--针对移动端。initial-scal：初始缩放比为1；maximum-scale：用户缩放的最大比例；user-scalable：用户是否可以缩放 no不可以-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="author" content="常伟">
+    <title>导航栏</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <style>
+        .navbar {
+            margin-bottom: 0;
+        }
+        
+        .biaoti {
+            background: #ececec;
+            padding-bottom: 10px;
+        }
+        
+        main .container {
+            padding-top: 10px;
+        }
+        
+        main .btn-primary,.btn-success {
+            margin-bottom: 10px;
+        }
+        
+        .btn-primary {
+            padding: 7px 12px;
+            background: orange;
+            border: none;
+        }
+        .btn-default{
+            margin: 0;
+        }
+        .btn-primary i {
+            float: left;
+            margin-right: 5px;
+            margin-top: 1px;
+        }
+        .table {
+            margin-bottom: 0;
+        }
+        
+        .tr-bg {
+            background: #eee;
+        }
+        /*.table-striped > tbody > tr:nth-of-type(2n+1){
+            background: none;
+        }
+        .table-striped > tbody > tr:nth-of-type(3):hover{
+            background: #f9f9f9;
+        }
+        .table-striped > tbody > tr:nth-of-type(1){
+            background: #eee;
+        }*/
+        
+        main p {
+            margin-top: 10px;
+            color: #aaa;
+        }
+        
+        .fa {
+            display: block;
+            color: cornflowerblue;
+            font-size: 17px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <nav class="navbar navbar-inverse" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#example-navbar-collapse">
+                        <span class="sr-only">切换导航</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">爱米妮儿童摄影</a>
+                </div>
+                <div class="collapse navbar-collapse" id="example-navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#">首页</a></li>
+                        <li class="active"><a href="#">客户</a></li>
+                        <li><a href="#">宝贝</a></li>
+                        <li><a href="#">孕妈咪</a></li>
+                        <li><a href="#">会员卡</a></li>
+                        <li><a href="#">订单</a></li>
+                        <li><a href="#">预约</a></li>
+                        <li><a href="#">数据</a></li>
+                        <li><a href="#">产品</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        璐 
+                                <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">jmeter</a></li>
+                                <li><a href="#">EJB</a></li>
+                                <li><a href="#">Jasper Report</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">分离的链接</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">另一个分离的链接</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">退出</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </nav>
+        <div class="biaoti">
+            <div class="container">
+                <h3>客户查询及管理</h3>
+            </div>
+        </div>
+        <main>
+            <div class="container">
+                <button type="button" class="btn btn-success">添加客户</button>
+
+                <!-- 按钮触发模态框 -->
+                <button class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                    <i class="fa fa-search"></i> 搜索
+                </button>
+
+                <!-- 模态框（Modal） -->
+                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                    &times;
+                                </button>
+                                <h4 class="modal-title" id="myModalLabel">
+                                    模态框（Modal）标题
+                                </h4>
+                            </div>
+                            <div class="modal-body">
+                                <form class="form-horizontal" role="form">
+                                    <div class="form-group">
+                                        <label for="firstname" class="col-sm-2 control-label">名字</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" id="firstname" placeholder="请输入名字">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="lastname" class="col-sm-2 control-label">姓</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" id="lastname" placeholder="请输入姓">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-sm-offset-2 col-sm-10">
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox"> 请记住我
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-sm-offset-2 col-sm-10">
+                                            <button type="submit" class="btn btn-default">登录</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                                <button type="button" class="btn btn-default">
+                                    提交更改
+                                </button>
+                            </div>
+                        </div>
+                        <!-- /.modal-content -->
+                    </div>
+                    <!-- /.modal -->
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table table-bordered table-hover ">
+                        <tr class="tr-bg">
+                            <td>添加时间</td>
+                            <td>姓名</td>
+                            <td>性别</td>
+                            <td>QQ</td>
+                            <td>手机号</td>
+                            <td>固话</td>
+                            <td>客户经理</td>
+                            <td>详情</td>
+                        </tr>
+                        <tr>
+                            <td>2016-02-14 10:45</td>
+                            <td>陈彩虹</td>
+                            <td>女士</td>
+                            <td>456875236</td>
+                            <td>13256875698</td>
+                            <td>45668523</td>
+                            <td>小蕊</td>
+                            <td><i class="fa fa-edit"></i></td>
+                        </tr>
+                        <tr>
+                            <td>2016-02-14 10:45</td>
+                            <td>侯艳</td>
+                            <td>女士</td>
+                            <td>456875236</td>
+                            <td>13256875698</td>
+                            <td>45668523</td>
+                            <td>小蕊</td>
+                            <td><i class="fa fa-edit"></i></td>
+                        </tr>
+                        <tr>
+                            <td>2016-02-14 10:45</td>
+                            <td>张三</td>
+                            <td>男士</td>
+                            <td>456875236</td>
+                            <td>13256875698</td>
+                            <td>45668523</td>
+                            <td>小蕊</td>
+                            <td><i class="fa fa-edit"></i></td>
+                        </tr>
+                    </table>
+                </div>
+                <p>共3个客户</p>
+            </div>
+        </main>
+    </div>
+</body>
+<!--jQuery的js引用在上面  因为下面的js是基于jQuery开发的-->
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+</html>

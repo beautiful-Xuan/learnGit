@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!--声明后设body高度没用。因为流式布局以节省空间为主-->
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <!--设置IE浏览器的兼容性，以最新的版本兼容当前的-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--针对移动端。宽度为当前设备的宽度；initial-scal：初始缩放比为1；maximum-scale：用户缩放的最大比例；user-scalable：用户是否可以缩放 no不可以-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="author" content="常伟">
+    <title>简单实例</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            padding-top: 50px;
+        }
+        
+        .container {
+            border: 1px solid black;
+            height: 500px;
+        }
+        .col-lg-4{
+            border: 1px solid blue;
+            height: 300px;
+        }
+        .col-md-5{
+            border:solid 1px red;
+            background:rgba(33,33,3,0.8);
+            top:15px;
+        }
+        .demo{
+            border: 1px solid blue;
+            height: 300px;
+            border:solid 1px red;
+            background:rgba(33,33,3,0.8);
+            top:15px;
+            /*float:left;*/
+            position:relative;
+            padding:0 15px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <!--容器布局，拆分布局从container内部开始-->
+    <div class="container">
+        <!--从上往下拆分-->
+        <div class="row">
+            <div class="col-lg-4 col-md-3 col-sm-4">
+1234
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-8">
+1234
+            </div>
+            <!--<div class="col-lg-4 col-md-5 ">
+ 
+            </div>-->
+            <div class="demo ">
+                1223
+            </div>
+        </div>
+    </div>
+</body>
+<!--jQuery的js引用在上面  因为下面的js是基于jQuery开发的-->
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+</html>
